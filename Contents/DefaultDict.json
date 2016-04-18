@@ -1,0 +1,45 @@
+{
+  "stations": [
+    {
+      "title": "BBC Radio 1",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_one.m3u8"
+    },
+    {
+      "title": "BBC Radio 1Xtra",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_1xtra.m3u8"
+    },
+    {
+      "title": "BBC Radio 2",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_two.m3u8"
+    },
+    {
+      "title": "BBC Radio 3",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8"
+    },
+    {
+      "title": "BBC Radio 4",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_fourfm.m3u8"
+    },
+    {
+      "title": "BBC Radio 4 Extra",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_four_extra.m3u8"
+    },
+    {
+      "title": "BBC Radio 5 Live",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live.m3u8"
+    },
+    {
+      "title": "BBC Radio 5 Live Sports Extra",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live_sports_extra.m3u8"
+    },
+    {
+      "title": "BBC Radio 6 Music",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_6music.m3u8"
+    },
+    {
+      "title": "BBC Asian Network",
+      "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_asian_network.m3u8"
+    }
+  ]
+}
+
