@@ -2,6 +2,7 @@
   "stations": [
     {
       "title": "BBC Radio 1",
+      "icon": "bbc_radio_1.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_one.m3u8",
@@ -11,7 +12,8 @@
       ]
     },
     {
-      "title": "BBC Radio 1Xtra",
+      "title": "BBC 1Xtra",
+      "icon": "bbc_1xtra.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_1xtra.m3u8",
@@ -22,6 +24,7 @@
     },
     {
       "title": "BBC Radio 2",
+      "icon": "bbc_radio_2.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_two.m3u8",
@@ -32,6 +35,7 @@
     },
     {
       "title": "BBC Radio 3",
+      "icon": "bbc_radio_3.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8",
@@ -42,6 +46,7 @@
     },
     {
       "title": "BBC Radio 4",
+      "icon": "bbc_radio_4.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_fourfm.m3u8",
@@ -52,6 +57,7 @@
     },
     {
       "title": "BBC Radio 4 Extra",
+      "icon": "bbc_radio_4_extra.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_four_extra.m3u8",
@@ -62,6 +68,7 @@
     },
     {
       "title": "BBC Radio 5 Live",
+      "icon": "bbc_radio_5_live.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live.m3u8",
@@ -72,6 +79,7 @@
     },
     {
       "title": "BBC Radio 5 Live Sports Extra",
+      "icon": "bbc_radio_5_live_sports_extra.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live_sports_extra.m3u8",
@@ -82,6 +90,7 @@
     },
     {
       "title": "BBC Radio 6 Music",
+      "icon": "bbc_radio_6_music.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_6music.m3u8",
@@ -92,6 +101,7 @@
     },
     {
       "title": "BBC Asian Network",
+      "icon": "bbc_asian_network.jpg",
       "streams": [
         {
           "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_asian_network.m3u8",
@@ -102,6 +112,7 @@
     },
     {
       "title": "Absolute Radio",
+      "icon": "absolute_radio.jpg",
       "streams": [
         {
           "url": "http://network.absoluteradio.co.uk/core/audio/aacplus/live.pls?service=ar",
@@ -171,6 +182,7 @@
     },
     {
       "title": "Absolute Radio 60s",
+      "icon": "absolute_radio_60s.jpg",
       "streams": [
         {
           "url": "http://network.absoluteradio.co.uk/core/audio/mp3/live.pls?service=a6bb",
@@ -183,7 +195,8 @@
       ]
     },
     {
-      "title": "Absolute Radios 00s",
+      "title": "Absolute Radio 00s",
+      "icon": "absolute_radio_00s.jpg",
       "streams": [
         {
           "url": "http://network.absoluteradio.co.uk/core/audio/aacplus/live.pls?service=a0hq",
@@ -197,6 +210,7 @@
     },
     {
       "title": "KISS",
+      "icon": "kiss.jpg",
       "streams": [
         {
           "url": "http://icy-e-ba-04-cr.sharp-stream.com/kissnational.mp3.m3u",

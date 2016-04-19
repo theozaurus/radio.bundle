@@ -21,6 +21,7 @@ def MainMenu():
 
 def CreateTrackObject(station, include_container=False):
     track_object = TrackObject(
+        thumb=R(station['icon']),
         key=Callback(CreateTrackObject, station=station, include_container=True),
         rating_key=station['title'],
         title=station['title'],
