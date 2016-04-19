@@ -41,7 +41,8 @@ def CreateMediaObject(stream):
 def CreateMediaObjectHls(stream):
     return MediaObject(
         optimized_for_streaming=True,
-        parts=[PartObject(key=HTTPLiveStreamURL(url=stream['url']))]
+        parts=[PartObject(key=HTTPLiveStreamURL(url=stream['url']))],
+        bitrate=stream['bitrate']
     )
 
 def CreateMediaObjectHttp(stream):
