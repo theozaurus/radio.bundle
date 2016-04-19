@@ -39,10 +39,15 @@ def CreateMediaObject(stream):
         return CreateMediaObjectHttp(stream)
 
 def CreateMediaObjectHls(stream):
+    part = PartObject(key=HTTPLiveStreamURL(url=stream['url']), container='mpegts')
+    part.streams.append(AudioStreamObject(codec=AudioCodec.AAC, bitrate=stream['bitrate']))
     return MediaObject(
+        protocol='hls',
+        container='mpegts',
+        video_codec=None,
         optimized_for_streaming=True,
-        parts=[PartObject(key=HTTPLiveStreamURL(url=stream['url']))],
-        bitrate=stream['bitrate']
+        bitrate=stream['bitrate'],
+        parts=[part],
     )
 
 def CreateMediaObjectHttp(stream):
