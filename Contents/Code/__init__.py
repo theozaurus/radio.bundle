@@ -2,9 +2,7 @@ ICON = 'icon-default.png'
 NAME = 'Radio'
 PREFIX = '/music/radio'
 
-CONTAINERS = {'mp4': Container.MP4, 'mp3': Container.MP3}
-CODECS = {'aac': AudioCodec.AAC, 'mp3': AudioCodec.MP3}
-RE_FILE = Regex('File1=(https?://.+)')
+REGEX_PLAYLIST_PLS = Regex('File1=(https?://.+)')
 
 def Start():
     Plugin.AddViewGroup('Main Menu', viewMode='List', mediaType='items')
@@ -18,15 +16,23 @@ def Start():
 def MainMenu():
     oc = ObjectContainer()
     for station in Dict['stations']:
-        if station['hls']:
-            oc.add(CreateHlsTrackObject(station=station))
-        else:
-            oc.add(CreateTrackObject(station=station))
+        oc.add(CreateTrackObject(station=station))
     return oc
 
-def CreateHlsTrackObject(station, include_container=False):
-    track_object = TrackObject(
-        key=Callback(CreateHlsTrackObject, station=station, include_container=True),
+def CreateTrackObject(station, include_container=False):
+    if station['protocol'] == 'hls':
+        track_object = CreateHlsTrackObject(station=station)
+    else:
+        track_object = CreateHttpTrackObject(station=station)
+
+    if include_container:
+        return ObjectContainer(objects=[track_object])
+    else:
+        return track_object
+
+def CreateHlsTrackObject(station):
+    return TrackObject(
+        key=Callback(CreateTrackObject, station=station, include_container=True),
         rating_key=station['url'],
         title=station['title'],
         items=[
@@ -41,16 +47,8 @@ def CreateHlsTrackObject(station, include_container=False):
         ]
     )
 
-    if include_container:
-        return ObjectContainer(objects=[track_object])
-    else:
-        return track_object
-
-def CreateTrackObject(station, include_container=False):
-    container = CONTAINERS[station['container']]
-    audio_codec = CODECS[station['codec']]
-
-    track_object = TrackObject(
+def CreateHttpTrackObject(station):
+    return TrackObject(
         key=Callback(CreateTrackObject, station=station, include_container=True),
         rating_key=station['url'],
         title=station['title'],
@@ -58,22 +56,24 @@ def CreateTrackObject(station, include_container=False):
             MediaObject(
                 optimized_for_streaming=True,
                 parts=[
-                    PartObject(key=Callback(PlayAudio, url=station['url'], ext=station['codec']))
+                    PartObject(key=Callback(PlayAudioFunc(station['playlist']), url=station['url'], ext=station['codec']))
                 ],
-                container=container,
-                audio_codec=audio_codec,
+                protocol='http',
+                container=station['container'],
+                audio_codec=station['codec']
             )
         ]
     )
 
-    if include_container:
-        return ObjectContainer(objects=[track_object])
-    else:
-        return track_object
+def PlayAudioFunc(playlist):
+    if playlist == 'pls':
+        return PlayAudioPls
+    elif playlist == 'm3u':
+        return PlayAudioM3u
 
-def PlayAudio(url):
+def PlayAudioPls(url):
     content = HTTP.Request(url, cacheTime=0).content
-    file_url = RE_FILE.search(content)
+    file_url = REGEX_PLAYLIST_PLS.search(content)
 
     if file_url:
         stream_url = file_url.group(1)
@@ -84,3 +84,8 @@ def PlayAudio(url):
         return Redirect(stream_url)
     else:
         raise Ex.MediaNotAvailable
+
+def PlayAudioM3u(url):
+    content = HTTP.Request(url, cacheTime=0).content
+    stream_url = content.split('\n', 1)[0]
+    return Redirect(stream_url)

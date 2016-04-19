@@ -3,81 +3,85 @@
     {
       "title": "BBC Radio 1",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_one.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 1Xtra",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_1xtra.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 2",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_two.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 3",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_three.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 4",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_fourfm.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 4 Extra",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_four_extra.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 5 Live",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 5 Live Sports Extra",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_radio_five_live_sports_extra.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Radio 6 Music",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_6music.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "BBC Asian Network",
       "url": "http://a.files.bbci.co.uk/media/live/manifesto/audio/simulcast/hls/uk/sbr_high/ak/bbc_asian_network.m3u8",
-      "hls": true
+      "protocol": "hls"
     },
     {
       "title": "Absolute Radio",
       "url": "http://network.absoluteradio.co.uk/core/audio/mp3/live.pls?service=vrbb",
-      "hls": false,
+      "protocol": "http",
       "codec": "mp3",
-      "container": "mp3"
+      "container": "mp3",
+      "playlist": "pls"
     },
     {
       "title": "Absolute Radio 60s",
       "url": "http://network.absoluteradio.co.uk/core/audio/mp3/live.pls?service=a6bb",
-      "hls": false,
+      "protocol": "http",
       "codec": "mp3",
-      "container": "mp3"
+      "container": "mp3",
+      "playlist": "pls"
     },
     {
       "title": "Absolute Radios 00s",
       "url": "http://network.absoluteradio.co.uk/core/audio/aacplus/live.pls?service=a0hq",
-      "hls": false,
+      "protocol": "http",
       "codec": "aac",
-      "container": "mp4"
+      "container": "mp4",
+      "playlist": "pls"
+    },
+    {
+      "title": "KISS",
+      "url": "http://icy-e-ba-04-cr.sharp-stream.com/kissnational.mp3.m3u",
+      "protocol": "http",
+      "codec": "mp3",
+      "container": "mp3",
+      "playlist": "m3u"
     }
-//    {
-//      "title": "KISS",
-//      "url": "http://icy-e-ba-04-cr.sharp-stream.com/kissnational.mp3.m3u",
-//      "hls": false,
-//      "codec": "mp3",
-//      "container": "mp3"
-//    }
   ]
 }
 
