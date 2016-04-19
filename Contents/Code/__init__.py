@@ -20,49 +20,38 @@ def MainMenu():
     return oc
 
 def CreateTrackObject(station, include_container=False):
-    if station['protocol'] == 'hls':
-        track_object = CreateHlsTrackObject(station=station)
-    else:
-        track_object = CreateHttpTrackObject(station=station)
+    track_object = TrackObject(
+        key=Callback(CreateTrackObject, station=station, include_container=True),
+        rating_key=station['title'],
+        title=station['title'],
+        items=map(CreateMediaObject, station['streams'])
+    )
 
     if include_container:
         return ObjectContainer(objects=[track_object])
     else:
         return track_object
 
-def CreateHlsTrackObject(station):
-    return TrackObject(
-        key=Callback(CreateTrackObject, station=station, include_container=True),
-        rating_key=station['url'],
-        title=station['title'],
-        items=[
-            MediaObject(
-                optimized_for_streaming=True,
-                parts=[
-                    PartObject(
-                        key=HTTPLiveStreamURL(url=station['url'])
-                    )
-                ]
-            )
-        ]
+def CreateMediaObject(stream):
+    if stream['protocol'] == 'hls':
+        return CreateMediaObjectHls(stream)
+    elif stream['protocol'] == 'http':
+        return CreateMediaObjectHttp(stream)
+
+def CreateMediaObjectHls(stream):
+    return MediaObject(
+        optimized_for_streaming=True,
+        parts=[PartObject(key=HTTPLiveStreamURL(url=stream['url']))]
     )
 
-def CreateHttpTrackObject(station):
-    return TrackObject(
-        key=Callback(CreateTrackObject, station=station, include_container=True),
-        rating_key=station['url'],
-        title=station['title'],
-        items=[
-            MediaObject(
-                optimized_for_streaming=True,
-                parts=[
-                    PartObject(key=Callback(PlayAudioFunc(station['playlist']), url=station['url'], ext=station['codec']))
-                ],
-                protocol='http',
-                container=station['container'],
-                audio_codec=station['codec']
-            )
-        ]
+def CreateMediaObjectHttp(stream):
+    return MediaObject(
+        optimized_for_streaming=True,
+        parts=[PartObject(key=Callback(PlayAudioFunc(stream['playlist']), url=stream['url'], ext=stream['codec']))],
+        protocol='http',
+        container=stream['container'],
+        audio_codec=stream['codec'],
+        bitrate=stream['bitrate']
     )
 
 def PlayAudioFunc(playlist):
