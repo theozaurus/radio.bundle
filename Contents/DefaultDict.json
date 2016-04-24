@@ -115,30 +115,6 @@
       "icon": "absolute_radio.jpg",
       "streams": [
         {
-          "url": "http://network.absoluteradio.co.uk/core/audio/aacplus/live.pls?service=ar",
-          "protocol": "http",
-          "container": "aac",
-          "codec": "aac",
-          "playlist": "pls",
-          "bitrate": 24
-        },
-        {
-          "url": "http://network.absoluteradio.co.uk/core/audio/aacplus/live.pls?service=arbb",
-          "protocol": "http",
-          "container": "aac",
-          "codec": "aac",
-          "playlist": "pls",
-          "bitrate": 64
-        },
-        {
-          "url": "http://network.absoluteradio.co.uk/core/audio/aacplus/live.pls?service=arhq",
-          "protocol": "http",
-          "container": "aac",
-          "codec": "aac",
-          "playlist": "pls",
-          "bitrate": 128
-        },
-        {
           "url": "http://network.absoluteradio.co.uk/core/audio/mp3/live.pls?service=vr",
           "protocol": "http",
           "container": "mp3",
@@ -153,22 +129,6 @@
           "codec": "mp3",
           "playlist": "pls",
           "bitrate": 128
-        },
-        {
-          "url": "http://network.absoluteradio.co.uk/core/audio/ogg/live.pls?service=vr",
-          "protocol": "http",
-          "container": "ogg",
-          "codec": "vorbis",
-          "playlist": "pls",
-          "bitrate": 32
-        },
-        {
-          "url": "http://network.absoluteradio.co.uk/core/audio/ogg/live.pls?service=vrbb",
-          "protocol": "http",
-          "container": "ogg",
-          "codec": "vorbis",
-          "playlist": "pls",
-          "bitrate": 160
         }
       ]
     },
@@ -191,10 +151,18 @@
       "icon": "absolute_radio_00s.jpg",
       "streams": [
         {
-          "url": "http://network.absoluteradio.co.uk/core/audio/aacplus/live.pls?service=a0hq",
+          "url": "http://network.absoluteradio.co.uk/core/audio/mp3/live.pls?service=a0",
           "protocol": "http",
-          "container": "aac",
-          "codec": "aac",
+          "container": "mp3",
+          "codec": "mp3",
+          "playlist": "pls",
+          "bitrate": 32
+        },
+        {
+          "url": "http://network.absoluteradio.co.uk/core/audio/mp3/live.pls?service=a0bb",
+          "protocol": "http",
+          "container": "mp3",
+          "codec": "mp3",
           "playlist": "pls",
           "bitrate": 128
         }
