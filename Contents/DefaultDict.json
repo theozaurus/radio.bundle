@@ -170,14 +170,6 @@
           "playlist": "pls",
           "bitrate": 160
         }
-//        {
-//          "url": "http://network.absoluteradio.co.uk/core/audio/oggflac/live.pls?service=ar",
-//          "protocol": "http",
-//          "container": "ogg",
-//          "codec": "flac",
-//          "playlist": "pls",
-//          "bitrate": 1000
-//        }
       ]
     },
     {
